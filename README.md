@@ -36,8 +36,28 @@ Receives turbidity data and contamination alerts wirelessly from the ESP32.
 
 | Component | Pin | Connected To |
 |-----------|-----|--------------|
-| Turbidity Sensor | VCC | 5V (Microcontroller) |
+| Turbidity Sensor | VCC | 5V / 3.3V (ESP32 Power) |
 | Turbidity Sensor | GND | GND |
-| Turbidity Sensor | Analog Output | A0 (Analog Pin) |
-| ESP32 / Microcontroller | VCC | Power Supply |
-| ESP32 / Microcontroller | GND | Common Ground |
+| Turbidity Sensor | Analog Output | GPIO34 (ADC Pin) |
+| ESP32 | VIN | 5V Power Supply |
+| ESP32 | GND | Common Ground |
+### Wiring Summary Diagram
+## Wiring Summary Diagram
+
+          +----------------------+
+          |      Turbidity       |
+          |        Sensor        |
+          |                      |
+          |  VCC  --------- 3.3V / 5V (ESP32)
+          |  GND  --------- GND
+          |  AOUT --------- GPIO34 (ADC)
+          +----------------------+
+
+                    |
+                    |
+             +-------------+
+             |    ESP32    |
+             |             |
+             |  VIN  ---- Power Supply
+             |  GND  ---- Common Ground
+             +-------------+
