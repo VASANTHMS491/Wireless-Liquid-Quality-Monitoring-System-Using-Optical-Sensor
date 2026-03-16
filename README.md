@@ -16,3 +16,13 @@ The system behavior was simulated using LabVIEW to visualize turbidity voltage a
 The system uses simple and affordable components, making it suitable for small-scale water monitoring applications.
 ### Continuous Contamination Detection
 Unlike manual testing, the system can detect sudden contamination immediately.
+## HArdware used
+1. ESP32
+
+2. Turbidity Sensor (SEN0189)
+
+3. Li-ion Battery
+
+4. TP4056 Charging Module
+
+5. Monitoring Interface
