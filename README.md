@@ -61,3 +61,10 @@ Receives turbidity data and contamination alerts wirelessly from the ESP32.
              |  VIN  ---- Power Supply
              |  GND  ---- Common Ground
              +-------------+
+## Notes / Tips
+
+- Ensure that the turbidity sensor and ESP32 share a common ground for proper operation.
+- The turbidity sensor outputs an analog voltage proportional to the turbidity level of the liquid.
+- Use an ADC pin (e.g., GPIO34) on the ESP32 to read the analog signal from the sensor.
+- If testing without the turbidity sensor, a potentiometer can be used to simulate varying turbidity levels.
+- Provide a stable power supply to the ESP32 to avoid fluctuations in sensor readings.
