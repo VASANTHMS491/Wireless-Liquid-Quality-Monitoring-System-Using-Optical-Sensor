@@ -17,14 +17,27 @@ The system uses simple and affordable components, making it suitable for small-s
 ### Continuous Contamination Detection
 Unlike manual testing, the system can detect sudden contamination immediately.
 ## Hardware used
-1. ESP32
+1. ESP32 - 
 Reads sensor data, processes turbidity values, and transmits data wirelessly.
-2. Turbidity Sensor (SEN0189)
+2. Turbidity Sensor (SEN0189) - 
 Measures the turbidity level of the liquid by detecting light scattering caused by suspended particles.
-3. Li-ion Battery
+3. Li-ion Battery - 
 Provides portable power supply for the system.
-4. TP4056 Charging Module
+4. TP4056 Charging Module - 
 Used for safe charging and protection of the Li-ion battery.
-5. Monitoring Interface
+5. Monitoring Interface - 
 Receives turbidity data and contamination alerts wirelessly from the ESP32.
+## Software Requirement
 
+1. Arduino IDE
+   
+2. Python 3
+   
+3. LabVIEW
+
+### Python Libraries Used
+1. pyserial
+  
+2. pyautogui
+ 
+3. time
