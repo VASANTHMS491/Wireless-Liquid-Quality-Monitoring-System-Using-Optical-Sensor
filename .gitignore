@@ -1,8 +1,8 @@
-# Libraries
+# LabVIEW Libraries
 *.lvlibp
 *.llb
 
-# Shared objects (inc. Windows DLLs)
+# Shared objects (Windows/Linux/macOS)
 *.dll
 *.so
 *.so.*
@@ -11,7 +11,17 @@
 # Executables
 *.exe
 
-# Metadata
+# LabVIEW metadata
 *.aliases
 *.lvlps
 .cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
