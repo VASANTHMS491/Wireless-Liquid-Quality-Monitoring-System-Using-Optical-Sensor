@@ -30,14 +30,14 @@ Receives turbidity data and contamination alerts wirelessly from the ESP32.
 ## Software Requirement
 
 1. Arduino IDE
-   
-2. Python 3
-   
-3. LabVIEW
+      
+2. LabVIEW
+## Pin Connections (Wiring Scheme)
 
-### Python Libraries Used
-1. pyserial
-  
-2. pyautogui
- 
-3. time
+| Component | Pin | Connected To |
+|-----------|-----|--------------|
+| Turbidity Sensor | VCC | 5V (Microcontroller) |
+| Turbidity Sensor | GND | GND |
+| Turbidity Sensor | Analog Output | A0 (Analog Pin) |
+| ESP32 / Microcontroller | VCC | Power Supply |
+| ESP32 / Microcontroller | GND | Common Ground |
