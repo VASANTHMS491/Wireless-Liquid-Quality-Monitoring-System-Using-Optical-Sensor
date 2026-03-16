@@ -68,3 +68,70 @@ Receives turbidity data and contamination alerts wirelessly from the ESP32.
 - Use an ADC pin (e.g., GPIO34) on the ESP32 to read the analog signal from the sensor.
 - If testing without the turbidity sensor, a potentiometer can be used to simulate varying turbidity levels.
 - Provide a stable power supply to the ESP32 to avoid fluctuations in sensor readings.
+## Installation & Running the Project
+
+Follow these steps to set up and run the **Wireless Liquid Quality Monitoring System**.
+
+---
+
+### 1. Upload ESP32 Code
+1. Open the **Arduino IDE**.
+2. Connect the **ESP32** to your PC using a USB cable.
+3. Select the correct **board** and **port** from `Tools → Board` and `Tools → Port`.
+4. Open the ESP32 sketch (`turbidity_monitor.ino`).
+5. Click **Upload** to flash the program to the ESP32.
+
+> ⚠ Ensure the turbidity sensor is correctly connected to the ESP32 ADC pin.
+
+---
+
+### 2. Connect the Turbidity Sensor
+Make the following connections:
+
+- **Sensor VCC → 3.3V / 5V (ESP32)**
+- **Sensor GND → GND**
+- **Sensor Analog Output → GPIO34 (ADC Pin)**
+
+Ensure all components share a **common ground**.
+
+---
+
+### 3. Power the System
+1. The ESP32 can be powered using:
+   - USB connection from PC, or  
+   - External **5V supply to the VIN pin**.
+2. Verify that the ESP32 powers on correctly.
+
+---
+
+### 4. Run the LabVIEW Simulation
+1. Open the provided **LabVIEW VI file**.
+2. Start the **simulation** to visualize turbidity values.
+3. Adjust the input signal (or potentiometer during testing) to simulate different turbidity levels.
+
+The interface will display the **turbidity level and system status**.
+
+---
+
+### 5. Monitoring the Output
+- The ESP32 reads turbidity data from the sensor.
+- The system processes the turbidity level.
+- If the turbidity exceeds the predefined threshold, a **warning message is sent to the user’s phone**.
+
+---
+
+## Troubleshooting
+
+### 1. Sensor Not Giving Proper Readings
+- Ensure the **sensor output is connected to an ESP32 ADC pin (GPIO34)**.
+- Verify that **VCC and GND connections are correct**.
+- Check that the water sample is properly placed in front of the sensor.
+
+### 2. Unstable Sensor Values
+- Ensure a **stable power supply** for the ESP32.
+- Avoid strong external light directly hitting the turbidity sensor.
+- Check for loose connections in the circuit.
+
+### 3. ESP32 Not Detected in Arduino IDE
+- Install the **ESP32 board package** in the Arduino IDE.
+- Verify the correct **COM port** is selected.
