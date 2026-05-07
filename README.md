@@ -37,7 +37,6 @@
 | 💡 **Optical Turbidity Detection** | Uses the Tyndall Effect to detect suspended particles              |
 | 🚨 **Threshold-Based Alerts**      | Sends warning notifications when contamination exceeds safe limits |
 | 📡 **Wireless Communication**      | ESP32 transmits turbidity data wirelessly                          |
-| 🖥️ **LabVIEW Visualization**      | Displays live turbidity voltage and contamination status           |
 | 💰 **Low-Cost Design**             | Built using affordable and easily available components             |
 | ⚡ **Continuous Detection**         | Instantly detects contamination without manual testing             |
 
