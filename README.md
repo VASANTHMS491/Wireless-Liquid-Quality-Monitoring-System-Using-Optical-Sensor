@@ -46,12 +46,10 @@
 
 1. ESP32 Dev Module
 2. SEN0189 Turbidity Sensor
-3. Li-ion Battery
-4. TP4056 Charging Module
-5. Breadboard
-6. Jumper Wires
-7. USB Cable
-8. Monitoring Device (Phone/PC)
+3. Breadboard
+4. Jumper Wires
+5. USB Cable
+6. Monitoring Device (Phone/PC)
 
 ---
 
@@ -67,7 +65,7 @@
 | ------------- | -------------------------------------- |
 | `WiFi.h`      | Wireless communication                 |
 | `Arduino ADC` | Reading analog turbidity values        |
-| `LabVIEW VI`  | Real-time visualization and simulation |
+| `LabVIEW VI`  | Prototype and simulation               |
 
 ---
 
@@ -75,22 +73,24 @@
 
 ### Turbidity Sensor to ESP32
 
-| Sensor Pin | ESP32 Pin | Purpose                 |
-| ---------- | --------- | ----------------------- |
-| VCC        | 3.3V / 5V | Power Supply            |
-| GND        | GND       | Common Ground           |
-| AOUT       | GPIO34    | Analog Turbidity Output |
+| Sensor Pin | ESP32 Pin | Purpose                         |
+| ---------- | --------- | ------------------------------- |
+| VCC        | 3.3V / 5V | Power Supply                    |
+| GND        | GND       | Common Ground                   |
+| AOUT       | Resistor  | To Step down the sensor voltage | 
+| Resistor   | GPIO34    | Analog Turbidity Output         |
 
 ### Wiring Diagram
 
 ```text
-  +---------------------------+
-  |     Turbidity Sensor      |
-  |        (SEN0189)          |
-  |                           |
-  |  VCC  ───────── 3.3V/5V ──┐
-  |  GND  ───────── GND ──────┤
-  |  AOUT ───────── GPIO34 ───┤
+  +------------------------------+
+  |     Turbidity Sensor         |
+  |        (SEN0189)             |
+  |                              |
+  |  VCC  ───────── 3.3V/5V ─────┐
+  |  GND  ───────── GND ─────────┤
+  |  AOUT ───────── Resistor ────┤
+  | Resistor ──────GPIO34────────|
   +---------------------------+  |
                                  |
                     +------------+-------+
@@ -116,8 +116,8 @@ The system uses the **Tyndall Effect** to measure liquid turbidity.
 * If the turbidity exceeds a predefined threshold:
 
   * A contamination alert is triggered 📱
-  * Data is transmitted wirelessly
-  * The status is displayed in LabVIEW
+  * Data is transmitted wirelessly and continuously updates every 2 seconds
+  * The status is displayed in a webpage
 
 ### Turbidity Behavior
 
@@ -154,7 +154,8 @@ Make the following connections:
 ```text
 Sensor VCC   →  3.3V or 5V
 Sensor GND   →  GND
-Sensor AOUT  →  GPIO34
+Sensor AOUT  →  Resistor
+Resistor     → GPIO34
 ```
 
 > ⚠️ Incorrect grounding may cause unstable sensor readings.
@@ -166,28 +167,26 @@ Sensor AOUT  →  GPIO34
 Power options:
 
 * USB connection from PC
-* External 5V supply via VIN pin
-* Li-ion battery with TP4056 charging module
 
 Verify that the ESP32 powers on successfully.
 
 ---
 
-### Step 4 — Run the LabVIEW Interface
+### Step 4 — Run the LabVIEW Prototype Simulation
 
 1. Open the provided **LabVIEW VI file**.
-2. Start the simulation/interface.
-3. Adjust turbidity levels using:
+2. Start the simulation prototype.
+3. Adjust the simulated turbidity input using:
 
-   * Real liquid samples
-   * Potentiometer (for testing)
+   * Virtual controls inside LabVIEW
+   * Potentiometer input during testing (optional)
 4. Observe:
 
-   * Live voltage readings
-   * Turbidity status
-   * Alert conditions
+   * Simulated turbidity voltage
+   * Water quality status
+   * Alert indication behavior
 
----
+> ⚠️ The LabVIEW interface is used as a **simulation prototype and visualization tool**, not as the primary sensing hardware.
 
 ### Step 5 — Monitor the Output
 
@@ -197,7 +196,7 @@ Verify that the ESP32 powers on successfully.
 
   * Warning alert is triggered 🚨
   * Data is transmitted wirelessly 📡
-  * LabVIEW displays updated status 🖥️
+  * Webpage displays updated status 🖥️
 
 ---
 
