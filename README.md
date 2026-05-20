@@ -25,8 +25,6 @@
 * [Working Principle](#-working-principle)
 * [Installation & Running](#-installation--running-the-project)
 * [Troubleshooting](#-troubleshooting)
-* [Project Structure](#-project-structure)
-
 ---
 
 ## ✨ Features
