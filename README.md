@@ -249,27 +249,7 @@ Then:
 
 ---
 
-## 📁 Project Structure
 
-```text
-wireless-liquid-quality-monitor/
-│
-├── Arduino_Code/
-│   └── turbidity_monitor.ino
-│
-├── LabVIEW/
-│   └── labview_simulation.vi
-│
-├── Images/
-│   ├── wiring_diagram.png
-│   └── setup_photo.jpg
-│
-├── README.md
-├── LICENSE
-└── .gitignore
-```
-
----
 
 ## 📜 License
 
